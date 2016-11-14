@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block conteudo %}
+    {% if tutoriais %}
+        <ul>
+        {% for tutorial in tutoriais %}
+            <li><a href="/tutorial/{{ tutorial.id }}/">{{ tutorial.titulo }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum tutorial disponivel</p>
+    {% endif %}
+{% endblock conteudo %}

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutoriais</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+</head>
+<body>
+
+    <!-- Static navbar -->
+    <nav id="menu_navegacao" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">TUTORIAIS</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Categorias</a></li>
+            <li class="active"><a href="#">Tutoriais<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Buscar</a></li>
+            <li><a href="#">Sobre</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container-fluid titulo">
+        <div class="container">
+            <h2>Lógica de Programação em C</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        {% block conteudo %}
+
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+
+
+</body>
+</html>

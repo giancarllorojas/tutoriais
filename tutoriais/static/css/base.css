@@ -1,0 +1,79 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #033649;
+}
+
+
+
+.navbar-right{
+    font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 10px;
+    border-top: 1px solid #106142;
+}
+#menu_navegacao.navbar-default .navbar-brand {
+    color: rgba(232, 221, 203, 1);
+}
+#menu_navegacao.navbar-default {
+    font-size: 14px;
+    background-color: rgba(3, 54, 73, 1);
+    border-width: 0px;
+    border-radius: 0px;
+}
+#menu_navegacao.navbar-default .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(3, 54, 73, 1);
+}
+#menu_navegacao.navbar-default .navbar-nav>li>a:hover,
+#menu_navegacao.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(49, 143, 143, 1);
+    background-color: rgba(3, 54, 73, 1);
+}
+#menu_navegacao.navbar-default .navbar-nav>.active>a,
+#menu_navegacao.navbar-default .navbar-nav>.active>a:hover,
+#menu_navegacao.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(33, 181, 181, 1);
+    background-color: rgba(3, 54, 73, 1);
+}
+#menu_navegacao.navbar-default .navbar-toggle {
+    border-color: #033649;
+}
+#menu_navegacao.navbar-default .navbar-toggle:hover,
+#menu_navegacao.navbar-default .navbar-toggle:focus {
+    background-color: #033649;
+}
+#menu_navegacao.navbar-default .navbar-toggle .icon-bar {
+    background-color: #033649;
+}
+#menu_navegacao.navbar-default .navbar-toggle:hover .icon-bar,
+#menu_navegacao.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #033649;
+}
+#menu_navegacao{
+    padding:13px;
+    margin-bottom:0px;
+}
+.titulo{
+    padding:13px;
+    background-color: #96c04e;
+    font-size:32px;
+    font-weight:100;
+    color: #f5f5f5;
+}
+.menu_lateral{
+    background-color: #f1f1f1;
+}
