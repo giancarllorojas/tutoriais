@@ -1,12 +1,46 @@
 {% extends "base.html" %}
+{% block titulo_conteudo %}<a href="/tutorial/{{ tutorial.id }}" class="titulo_texto">{{ tutorial.titulo }}</a>{% endblock %}
 {% block conteudo %}
-    {% if tutoriais %}
-        <ul>
-        {% for tutorial in tutoriais %}
-            <li><a href="/tutorial/{{ tutorial.id }}/">{{ tutorial.titulo }}</a></li>
+<div class="row">
+    <div class="col-md-9 menu_conteudo">
+        <h1>{{ artigo.titulo }}</h1>
+        <span class="text-justify">
+            {{ artigo.conteudo }}
+        </span>
+        <div class="navegue-inferior">
+            {% if anterior %}
+                <div class="left"><a href="/tutorial/{{ tutorial.id }}/{{ anterior.id }}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>{{ anterior.titulo }}</a></div>
+            {% endif %}
+            {% if proximo %}
+                <div class="right"><a href="/tutorial/{{ tutorial.id }}/{{ proximo.id }}"> {{ proximo.titulo }}<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></a></div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-3 menu_lateral">
+        <form action="/busca/" role="search">
+            <input id="id_q" name="q" placeholder="Buscar" type="search" class="busca">
+        </form>
+        <h2>Conteúdo</h2>
+        {% for sec in secoes %}
+            <ul><li><b>{{ sec.titulo }}</b></li><ul>
+            {%  for art in artigos %}
+                {% if art.secao.id == sec.id %}
+                    <li><a class="art_secao" href="/tutorial/{{ tutorial.id }}/{{ art.id }}">{{ art.titulo }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul></ul>
         {% endfor %}
-        </ul>
-    {% else %}
-        <p>Nenhum tutorial disponivel</p>
-    {% endif %}
+        <h2>Navegue</h2>
+        Tutorial: <a href="/tutorial/{{ tutorial.id }}">{{ tutorial.titulo }}</a><br>
+        {% if anterior %}
+        Anterior: <a href="/tutorial/{{ tutorial.id }}/{{ anterior.id }}">{{ anterior.titulo }}</a><br>
+        {% endif %}
+        {% if proximo %}
+            Próximo: <a href="/tutorial/{{ tutorial.id }}/{{ proximo.id }}">{{ proximo.titulo }}</a><br>
+        {% endif %}
+        Ver mais de: <a href="/categoria/{{ tutorial.categoria.id }}">{{ tutorial.categoria }}</a>
+    </div>
+</div>
+
 {% endblock conteudo %}

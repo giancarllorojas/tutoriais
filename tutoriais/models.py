@@ -1,11 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Tutorial(models.Model):
     id =  models.CharField(max_length=100, primary_key=True)
     titulo = models.CharField(max_length=200)
+    descricao = models.TextField()
+    imagem = models.CharField(max_length=100)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
     datatempo = models.DateTimeField(auto_now_add=True, blank=True)
     visivel = models.BooleanField(default=True)
+    nivel = models.SmallIntegerField()
+    autor = models.ForeignKey(User)
 
     def __str__(self):
         return self.titulo
